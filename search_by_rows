@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+bool rowSearch(int matrix[][4], int rows, int cols, int target) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (matrix[i][j] == target) {
+                cout << "Элемент найден в строке " << i << ", колонке " << j << endl;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int main() {
+    int matrix[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+
+    int target;
+    cout << "Введите искомое число: ";
+    cin >> target;
+
+    if (!rowSearch(matrix, 3, 4, target)) {
+        cout << "Элемент не найден" << endl;
+    }
+
+    return 0;
+}
